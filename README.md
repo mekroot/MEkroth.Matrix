@@ -33,7 +33,7 @@ Following framework has been used. It's Micrsofts own and some third parties.
 Following framework has been used in case of unit testing.
 - [xUnit](https://xunit.net), core test frameworks.
 - [FluentAssertion](https://fluentassertions.com/), used to make it easier to read the assertion.
-- [NSubstitute](https://nsubstitute.github.io/), ease to use mock libery. Help to mock services when setting up the unit tests.
+- [NSubstitute](https://nsubstitute.github.io/), ease to use mock library. Help to mock services when setting up the unit tests.
 
 ## Frontend frameworks overview
 Following framework has been used in case of unit testing.
