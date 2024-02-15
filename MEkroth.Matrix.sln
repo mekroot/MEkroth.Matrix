@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MEkroth.Matrix.Api", "src\MEkroth.Matrix.Api\MEkroth.Matrix.Api.csproj", "{30AE31C0-E9BF-4782-A240-5337D16AD706}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{8AE9858D-3648-47C3-B35E-CABA4DE15CF9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MEkroth.Matrix.Api.UnitTests", "tests\MEkroth.Matrix.Api.UnitTests\MEkroth.Matrix.Api.UnitTests.csproj", "{B80B2BA0-CAD8-47FB-AC7F-ED360695E8FC}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "status-matrix", "src\status-matrix\status-matrix.esproj", "{DDC38F42-AC4C-4172-8457-368C2A851A01}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30AE31C0-E9BF-4782-A240-5337D16AD706}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30AE31C0-E9BF-4782-A240-5337D16AD706}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30AE31C0-E9BF-4782-A240-5337D16AD706}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30AE31C0-E9BF-4782-A240-5337D16AD706}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B80B2BA0-CAD8-47FB-AC7F-ED360695E8FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B80B2BA0-CAD8-47FB-AC7F-ED360695E8FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B80B2BA0-CAD8-47FB-AC7F-ED360695E8FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B80B2BA0-CAD8-47FB-AC7F-ED360695E8FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDC38F42-AC4C-4172-8457-368C2A851A01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDC38F42-AC4C-4172-8457-368C2A851A01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDC38F42-AC4C-4172-8457-368C2A851A01}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DDC38F42-AC4C-4172-8457-368C2A851A01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDC38F42-AC4C-4172-8457-368C2A851A01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDC38F42-AC4C-4172-8457-368C2A851A01}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B80B2BA0-CAD8-47FB-AC7F-ED360695E8FC} = {8AE9858D-3648-47C3-B35E-CABA4DE15CF9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {21989CA2-DD97-4644-A1BB-0E63B80BAE3B}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,65 @@
+<import from="../../../shared/components/alert-warning.html""></import>
+<import from="./status-counter.html"></import>
+<import from="./status-matrix-list.css"></import>
+
+<div class="sm:flex sm:items-center mt-4">
+  <div class="basis-3/6 sm:flex-auto">
+    <h1 class="text-base font-semibold leading-6 text-gray-900">List of Statuses</h1>
+    <p class="mt-1 text-sm text-gray-700">A list of all statuses. Type your name of the status to save</p>
+  </div>
+  <div class="basis-3/6 relative mt-4 right-0">
+    <label for="name" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Name</label>
+    <input type="text" name="name" id="name" value.bind="name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder.bind="name">
+    <div class="mt-3">
+      <button type="button" class="float-right inline-flex items-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" click.trigger="() => save()">Save</button>
+      <button type="button" class="float-right mr-4 inline-flex items-center rounded-md bg-gray-500 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600" click.trigger="() => undo()">Undo</button>
+    </div>
+  </div>
+</div>
+
+<alert-warning title="No status matrix exists" 
+               text="Nothing saved yet. Please save one for later usage."
+               if.bind="showWarning">
+</alert-warning>
+
+<alert-warning title="Some errors have occurred" 
+               text.bind="error"
+               if.bind="showError">
+</alert-warning>
+
+<div if.bind="!showWarning" class="mt-8 flow-root">
+  <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+    <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+      <table class="min-w-full divide-y divide-gray-300">
+        <thead>
+          <tr>
+            <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">Name</th>
+            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Statues</th>
+            <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-0">
+              <span class="sr-only">Delete</span>
+            </th>
+            <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-0">
+              <span class="sr-only">Edit</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200">
+          <tr repeat.for="statusMatrix of statusMatrices & state">
+              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">${statusMatrix.name}</td>
+              <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                <div class="flex flex-row status-column">
+                  <status-counter repeat.for="status of statusMatrix.statuses" status-count.bind="status"></status-counter>
+                </div>
+              </td>
+              <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
+                <a href="#" class="text-indigo-600 hover:text-indigo-900" click.trigger="() => delete(statusMatrix.id)">Delete<span class="sr-only">, ${statusMatrix.name}</span></a>
+              </td>
+              <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
+                <a href="#" class="text-indigo-600 hover:text-indigo-900" click.trigger="() => edit(statusMatrix.id)">Edit<span class="sr-only">, ${statusMatrix.name}</span></a>
+              </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
