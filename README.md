@@ -16,7 +16,7 @@ First of all clone this repository, then follow up the steps below.
 
 ### Frontend
 1. Open up a terminal.
-2. Locate to ```cd path/you/clone/to/scr/status-matrix```.
+2. Locate to ```cd path/you/clone/to/src/status-matrix```.
 3. Run ```npm install```, this is to install all needed packages.
 4. After that the install success, run ```npm start```
 
